@@ -97,7 +97,8 @@ function any(){
  * @returns Boolean
  */
 function tv(){
-    return is('tizen') || is('webos') || is('orsay') || is('netcast') || is('apple_tv') ? true : false
+    return true;
+    // return is('tizen') || is('webos') || is('orsay') || is('netcast') || is('apple_tv') ? true : false
 }
 
 /**
