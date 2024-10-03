@@ -97,8 +97,7 @@ function any(){
  * @returns Boolean
  */
 function tv(){
-    return true;
-    // return is('tizen') || is('webos') || is('orsay') || is('netcast') || is('apple_tv') ? true : false
+    return is('tizen') || is('webos') || is('orsay') || is('netcast') || is('apple_tv') ? true : false
 }
 
 /**
@@ -131,9 +130,6 @@ function screen(need){
     if(need == 'light'){
         return Storage.field('light_version') && screen('tv')
     }
-    if(need == 'tv'){
-        return true
-    }
 
     let is_tv = true
 
@@ -143,12 +139,12 @@ function screen(need){
         else if(Boolean(navigator.userAgent.toLowerCase().match(/iphone|ipad/i))) is_tv = false
         else if(Utils.isTouchDevice()){
             if(!Boolean(navigator.userAgent.toLowerCase().match(/(large screen)|googletv|mibox|mitv|smarttv|google tv/i))){
-                let ratio  = window.devicePixelRatio || 1
-                let width  = window.innerWidth * ratio
-                let height = window.innerHeight * ratio
+                // let ratio  = window.devicePixelRatio || 1
+                // let width  = window.innerWidth * ratio
+                // let height = window.innerHeight * ratio
 
-
-                is_tv = width > height && width >= 1280
+                is_tv = true;
+                // is_tv = width > height && width >= 1280
             }
         }
     }
